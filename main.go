@@ -1,9 +1,9 @@
 package main
 
 import(
-	"fmt"
-	"os/user"
-	"log"
+    "fmt"
+    "os/user"
+    "log"
     "google.golang.org/grpc"
     "google.golang.org/grpc/credentials"
     "google.golang.org/grpc/metadata"
@@ -16,7 +16,7 @@ import(
 var MACAROONOPTION grpc.CallOption
 
 func main(){
-	grpcConn := grpcSetup()
+    grpcConn := grpcSetup()
     defer grpcConn.Close()
 
     lncli := lnrpc.NewLightningClient(grpcConn)
@@ -40,7 +40,7 @@ func main(){
 }
 
 func grpcSetup()*grpc.ClientConn{
-	usr, err := user.Current()
+    usr, err := user.Current()
     if err != nil {
         log.Fatal( err )
     }
